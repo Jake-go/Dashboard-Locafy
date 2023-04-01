@@ -1,0 +1,22 @@
+<div *ngIf="message">
+    <h2>{{ message }}</h2>
+  </div>
+  
+  <div>
+    <form (submit)="onSubmit()" [formGroup]="uploadForm">
+        <div class="form-group mb-3">
+            <label for="file" class="form-label">Upload your script: </label>
+            <input class="form-control" type="file" name="file" id="file" (change)="onFileSelect($event)">
+        </div>
+      <button type="submit" class="btn btn-primary mt-3">Upload</button>
+    </form>
+  </div>
+  
+  <div>
+    <ul>
+      <li *ngFor="let file of files">
+        <a [href]="file">{{ file }}</a>
+      </li>
+    </ul>
+  </div>
+  
