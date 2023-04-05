@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { ModalUploadBoxComponent } from './modal-upload-box/modal-upload-box.component';
+
 
 @Component({
   selector: 'app-root',
@@ -7,6 +7,5 @@ import { ModalUploadBoxComponent } from './modal-upload-box/modal-upload-box.com
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @ViewChild('modalUploadBox') modalUploadBox!: ModalUploadBoxComponent;
   title = 'webapp';
 }
