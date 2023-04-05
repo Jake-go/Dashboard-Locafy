@@ -10,13 +10,21 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { ModalUploadBoxComponent } from './modal-upload-box/modal-upload-box.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     FileUploadComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    ModalUploadBoxComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -24,8 +32,12 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatSidenavModule
+    MatSidenavModule,
+    NgbModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
+  entryComponents: [ModalUploadBoxComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

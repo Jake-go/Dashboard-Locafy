@@ -4,13 +4,24 @@
     background-color: #182B40;
 }
 
-.navbar-brand-container {
+.navbar-brand-bkg {
     background-color: #D9D9D9;
     border-radius: 25px;
-    padding: 0px 10px; 
+    padding: 0px 10px 0px 10px; 
     font-family: 'Abel', sans-serif;
+    width: 106px;
+    display: flex;
+    justify-content: center;
 }
 
+.navbar-brand-container {
+    position: fixed;
+    top: 12px;
+    width:250px;
+    height: 31px;
+    display: flex;
+    justify-content: center;
+}
 
 .search-container {
   display: flex;

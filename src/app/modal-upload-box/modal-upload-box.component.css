@@ -1,0 +1,12 @@
+.modal-content {
+  padding: 1rem;
+}
+
+.modal-header,
+.modal-footer {
+  padding: 1rem 1rem;
+}
+
+.modal-body {
+  padding: 1rem 1rem;
+}
