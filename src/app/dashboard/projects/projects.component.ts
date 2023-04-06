@@ -14,47 +14,11 @@ export class ProjectsComponent implements OnInit{
     new ProjectTile('Generic Movie', ['John Doe', 'Jane Smith'], 
       [
         new Scene(1, 'In', 'Generic Location', 'Day', 1, '123', 'Generic Street', 'A1B 2C3', 'Generic City', 'Generic Province', 'Canada'), 
-        new Scene(2, 'Out', 'General Location', 'Night', 2, '321', 'General Street', 'A1B 4C3', 'Toronto City', 'Ontario', 'Canada')
+        new Scene(2, 'Out', 'General Location', 'Night', 2, '321', 'General Street', 'A1B 4C3', 'Toronto', 'Ontario', 'Canada')
       ]),
     new ProjectTile('Project 2', ['Mike Johnson', 'Anna Brown']),
-    new ProjectTile('Team Force X', ['Dwight Schrute', 'Pam Beasley']),
-    new ProjectTile('Sales', ['Michael Scott', 'Jim Halpert', 'Kevin Malone']),
-    new ProjectTile('Bad Marriage', ['Andy Bernard', 'Angela Martin']),
-    new ProjectTile('Generic TV Show', ['Tommy Jello', 'GI Joe', 'Spongebob Squarepants']),
-    new ProjectTile('Generic Movie', ['John Doe', 'Jane Smith']),
-    new ProjectTile('Project 2', ['Mike Johnson', 'Anna Brown']),
-    new ProjectTile('Team Force X', ['Dwight Schrute', 'Pam Beasley']),
-    new ProjectTile('Sales', ['Michael Scott', 'Jim Halpert', 'Kevin Malone']),
-    new ProjectTile('Bad Marriage', ['Andy Bernard', 'Angela Martin']),
-    new ProjectTile('Generic TV Show', ['Tommy Jello', 'GI Joe', 'Spongebob Squarepants']),
-    new ProjectTile('Generic Movie', ['John Doe', 'Jane Smith']),
-    new ProjectTile('Project 2', ['Mike Johnson', 'Anna Brown']),
-    new ProjectTile('Team Force X', ['Dwight Schrute', 'Pam Beasley']),
-    new ProjectTile('Sales', ['Michael Scott', 'Jim Halpert', 'Kevin Malone']),
-    new ProjectTile('Bad Marriage', ['Andy Bernard', 'Angela Martin']),
-    new ProjectTile('Generic TV Show', ['Tommy Jello', 'GI Joe', 'Spongebob Squarepants']),
-    new ProjectTile('Generic Movie', ['John Doe', 'Jane Smith']),
-    new ProjectTile('Project 2', ['Mike Johnson', 'Anna Brown']),
-    new ProjectTile('Team Force X', ['Dwight Schrute', 'Pam Beasley']),
-    new ProjectTile('Sales', ['Michael Scott', 'Jim Halpert', 'Kevin Malone']),
-    new ProjectTile('Bad Marriage', ['Andy Bernard', 'Angela Martin']),
-    new ProjectTile('Generic TV Show', ['Tommy Jello', 'GI Joe', 'Spongebob Squarepants']),
-    new ProjectTile('Generic Movie', ['John Doe', 'Jane Smith']),
-    new ProjectTile('Project 2', ['Mike Johnson', 'Anna Brown']),
-    new ProjectTile('Team Force X', ['Dwight Schrute', 'Pam Beasley']),
-    new ProjectTile('Sales', ['Michael Scott', 'Jim Halpert', 'Kevin Malone']),
-    new ProjectTile('Bad Marriage', ['Andy Bernard', 'Angela Martin']),
-    new ProjectTile('Generic TV Show', ['Tommy Jello', 'GI Joe', 'Spongebob Squarepants']),
-    new ProjectTile('Generic Movie', ['John Doe', 'Jane Smith']),
-    new ProjectTile('Project 2', ['Mike Johnson', 'Anna Brown']),
-    new ProjectTile('Team Force X', ['Dwight Schrute', 'Pam Beasley']),
-    new ProjectTile('Sales', ['Michael Scott', 'Jim Halpert', 'Kevin Malone']),
-    new ProjectTile('Bad Marriage', ['Andy Bernard', 'Angela Martin']),
-    new ProjectTile('Generic TV Show', ['Tommy Jello', 'GI Joe', 'Spongebob Squarepants']),
-    new ProjectTile('Generic Movie', ['John Doe', 'Jane Smith']),
-    new ProjectTile('Project 2', ['Mike Johnson', 'Anna Brown']),
-    new ProjectTile('Team Force X', ['Dwight Schrute', 'Pam Beasley']),
-    new ProjectTile('Sales', ['Michael Scott', 'Jim Halpert', 'Kevin Malone'])
+    new ProjectTile('Team Force X', ['Dwight Schrute', 'Pam Beasley'])
+    
   ];
 
   constructor() {}

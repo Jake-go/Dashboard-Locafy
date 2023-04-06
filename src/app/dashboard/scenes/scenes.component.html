@@ -7,12 +7,7 @@
                     <th scope="col">Int./Ext.</th>
                     <th scope="col">Location</th>
                     <th scope="col">Time of Day</th>
-                    <th scope="col">Street Number</th>
-                    <th scope="col">Street Name</th>
-                    <th scope="col">Postal Code</th>
-                    <th scope="col">City</th>
-                    <th scope="col">Province</th>
-                    <th scope="col">Country</th>
+                    <th scope="col">Selected Location Address</th>
                 </tr>
             </thead>
             <tbody>
@@ -21,12 +16,7 @@
                     <td>{{ scene.inOrOut }}</td>
                     <td>{{ scene.location }}</td>
                     <td>{{ scene.timeOfDay }}</td>
-                    <td>{{ scene.streetNum }}</td>
-                    <td>{{ scene.streetName }}</td>
-                    <td>{{ scene.postalCode }}</td>
-                    <td>{{ scene.city }}</td>
-                    <td>{{ scene.province }}</td>
-                    <td>{{ scene.country }}</td>
+                    <td><i class="bi bi-geo-alt-fill mx-1"></i>{{ scene.streetNum }} {{ scene.streetName }}, {{ scene.city }}</td>
                 </tr>
             </tbody>
         </table>
