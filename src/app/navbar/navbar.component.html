@@ -1,61 +1,65 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
-    <div class="container-fluid">
-      <!-- logo -->
-      <div class="navbar-brand-container">
-        <a class="navbar-brand navbar-brand-bkg text-dark" href="#">
-          <img src="assets/icons/locafy-icon.png" alt="Pylon Mascot" width="12.72" height="25" class="me-2 mt-1" />Locafy
-        </a>
-      </div>
-
-        <!-- start of search bar -->
-        <div class="d-flex justify-content-center w-100">
-          <div class="search-container">
-            <form class="search-form">
-              <input class="search-input" type="text" placeholder="Search here..." />
-              <button class="search-button" type="submit">
-                <i class="bi bi-search text-white"></i>
-              </button>
-            </form>
-          </div>
-        </div>
-        <!-- end of search bar -->
-  
-        <!-- nav elements -->
-        <div class="d-flex align-items-center">
-          <div class="dropdown">
-            <button class="btn dropdown-toggle icon-hover" id="helpDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="bi bi-question-circle text-white"></i>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="helpDropdown">
-              <li><a class="dropdown-item" href="#">Help</a></li>
-              <li><a class="dropdown-item" href="#">FAQ</a></li>
-              <li><a class="dropdown-item" href="#">Report An Issue</a></li>
-            </ul>
-          </div>
-          <div class="dropdown">
-            <button class="btn dropdown-toggle icon-hover" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="bi bi-bell text-white"></i>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="notificationDropdown">
-                <!-- populate dynamically eventually -->
-            </ul>
-          </div>
-          <div class="dropdown mr-5">
-            <button class="btn dropdown-toggle icon-hover" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="bi bi-person-circle text-white"></i>
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-              <li><a class="dropdown-item" href="#">{{ userName }}</a></li>
-              <li><a class="dropdown-item" href="#">{{ currentProduction }}</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Settings</a></li>
-              <li><a class="dropdown-item" href="#">Account</a></li>
-              <li><a class="dropdown-item" href="#">Sign Out</a></li>
-            </ul>
-          </div>
-        </div>
-        <!-- End of nav elements -->
-      
+  <div class="container-fluid">
+    <!-- logo -->
+    <div class="navbar-brand-container">
+      <a class="navbar-brand navbar-brand-bkg text-dark" href="#">
+        <img src="assets/icons/locafy-icon.png" alt="Pylon Mascot" width="12.72" height="25" class="me-2 mt-1" />Locafy
+      </a>
     </div>
-  </nav>
-  
+
+    <!-- start of search bar -->
+    <div class="d-flex justify-content-center w-100">
+      <div class="search-container">
+        <form class="search-form">
+          <input class="search-input" type="text" placeholder="Search here..." />
+          <button class="search-button" type="submit">
+            <i class="bi bi-search text-white"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- end of search bar -->
+
+    <!-- nav elements -->
+    <div class="d-flex align-items-center">
+      <div class="dropdown">
+        <button class="btn dropdown-toggle icon-hover" id="helpDropdown" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <i class="bi bi-question-circle text-white"></i>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="helpDropdown">
+          <li><a class="dropdown-item" href="#">Help</a></li>
+          <li><a class="dropdown-item" href="#">FAQ</a></li>
+          <li><a class="dropdown-item" href="#">Report An Issue</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn dropdown-toggle icon-hover" id="notificationDropdown" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <i class="bi bi-bell text-white"></i>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="notificationDropdown">
+          <!-- populate dynamically eventually -->
+        </ul>
+      </div>
+      <div class="dropdown mr-5">
+        <button class="btn dropdown-toggle icon-hover" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <i class="bi bi-person-circle text-white"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="#">{{ userName }}</a></li>
+          <li><a class="dropdown-item" href="#">{{ currentProduction }}</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" href="#">Settings</a></li>
+          <li><a class="dropdown-item" href="#">Account</a></li>
+          <li><a class="dropdown-item" href="#">Sign Out</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- End of nav elements -->
+
+  </div>
+</nav>

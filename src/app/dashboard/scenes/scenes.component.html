@@ -1,0 +1,34 @@
+<div class="container mt-5">
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Scene Number</th>
+                    <th scope="col">Int./Ext.</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Time of Day</th>
+                    <th scope="col">Street Number</th>
+                    <th scope="col">Street Name</th>
+                    <th scope="col">Postal Code</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Province</th>
+                    <th scope="col">Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let scene of scenes">
+                    <td>{{ scene.sceneNumber }}</td>
+                    <td>{{ scene.inOrOut }}</td>
+                    <td>{{ scene.location }}</td>
+                    <td>{{ scene.timeOfDay }}</td>
+                    <td>{{ scene.streetNum }}</td>
+                    <td>{{ scene.streetName }}</td>
+                    <td>{{ scene.postalCode }}</td>
+                    <td>{{ scene.city }}</td>
+                    <td>{{ scene.province }}</td>
+                    <td>{{ scene.country }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

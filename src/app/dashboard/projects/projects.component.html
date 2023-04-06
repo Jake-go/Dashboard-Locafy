@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 mb-4">
+            <h1 class="text-center">Projects</h1>
+        </div>
+        <div class="projects-container">
+            <div *ngFor="let project of projects" class="project-tile" (click)="onProjectSelected(project)">
+                <div class="project-title">{{ project.title }}</div>
+                <ul class="team-members">
+                    <li *ngFor="let member of project.teamMembers">{{ member }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<app-scenes [scenes]="selectedProject?.scenes ?? []"></app-scenes>

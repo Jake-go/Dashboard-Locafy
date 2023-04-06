@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+.canvas-area {
+    margin-left: 260px;
+    /* Width of the sidebar */
+    margin-top: 50px;
+    /* Height of the navbar */
+    padding: 20px;
+    /* Optional: Add padding if needed */
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    overflow-y: scroll;
+    /* Enable vertical scrollbar */
+    scroll-padding-top: 75px;
+    /* Adjust this value to match the height of your navbar */
+}
+
+
+/* scrollbar */
+
+/* For WebKit browsers (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}

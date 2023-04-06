@@ -1,59 +1,31 @@
-<div class = "container">
-<div class="sidebar mt-5">
+<div class="container">
+  <div class="sidebar mt-5">
     <div class="upload-container mt-5">
-        <button type="button" class="btn custom-upload-btn text-white" (click)="openUploadModal()">Upload</button>
+      <button type="button" class="btn custom-upload-btn text-white" (click)="openUploadModal()">Upload</button>
     </div>
     <div class="nav-elements-container mt-5">
-        <nav>
-            <ul class="nav flex-column custom-nav">
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">
-                        <i class="bi bi-house-door-fill mx-1"></i>
-                        <span class="nav-text text-white">Projects</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="bi bi-geo-alt-fill mx-1"></i>
-                        <span class="nav-text">Locations</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="bi bi-file-earmark-person-fill mx-1"></i>
-                        <span class="nav-text text-white">Contacts</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+      <nav>
+        <ul class="nav flex-column custom-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="projects">
+              <i class="bi bi-house-door-fill mx-1"></i>
+              <span class="nav-text text-white">Projects</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="bi bi-geo-alt-fill mx-1"></i>
+              <span class="nav-text">Locations</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="bi bi-file-earmark-person-fill mx-1"></i>
+              <span class="nav-text text-white">Contacts</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
+  </div>
 </div>
-</div>
-<!-- Bootstrap JS Modal Method:
-data-bs-toggle="modal" data-bs-target="#uploadModal"
- -->
-
-<!-- <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="uploadModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="uploadModalLabel">Upload Screenplay</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form (submit)="onSubmit()" [formGroup]="screenplayUploadForm">
-            <div class="mb-3">
-              <label for="formFile" class="form-label">Select production screenplay</label>
-              <input class="form-control" type="file" id="screenplayFile">
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Upload</button>
-        </div>
-      </div>
-    </div>
-  </div> -->

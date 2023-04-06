@@ -16,6 +16,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { ProjectsComponent } from './dashboard/projects/projects.component';
+import { ScenesComponent } from './dashboard/scenes/scenes.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { LoginPageComponent } from './login-page/login-page.component';
     ModalUploadBoxComponent,
     DashboardComponent,
     LandingPageComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    ProjectsComponent,
+    ScenesComponent
   ],
   imports: [
     BrowserModule,
