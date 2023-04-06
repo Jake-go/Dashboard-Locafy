@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectTile } from 'src/app/models/project-tile.model';
 import { Scene } from 'src/app/models/scene.model';
+import { Router } from '@angular/router';
+import { DashboardServiceService } from '../dashboard-service.service';
 
 @Component({
   selector: 'app-projects',
@@ -9,23 +11,15 @@ import { Scene } from 'src/app/models/scene.model';
 })
 export class ProjectsComponent implements OnInit{
   selectedProject: ProjectTile | null = null;
-  projects: ProjectTile[] = [
-    // Add your project tiles here, e.g.:
-    new ProjectTile('Generic Movie', ['John Doe', 'Jane Smith'], 
-      [
-        new Scene(1, 'In', 'Generic Location', 'Day', 1, '123', 'Generic Street', 'A1B 2C3', 'Generic City', 'Generic Province', 'Canada'), 
-        new Scene(2, 'Out', 'General Location', 'Night', 2, '321', 'General Street', 'A1B 4C3', 'Toronto', 'Ontario', 'Canada')
-      ]),
-    new ProjectTile('Project 2', ['Mike Johnson', 'Anna Brown']),
-    new ProjectTile('Team Force X', ['Dwight Schrute', 'Pam Beasley'])
-    
-  ];
+  projects: ProjectTile[] = [];
 
-  constructor() {}
+  constructor(private router: Router, private dashboardService: DashboardServiceService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.projects = this.dashboardService.getProjects();
+  }
 
   onProjectSelected(project: ProjectTile) {
-    this.selectedProject = project;
+    this.router.navigate(['dashboard', 'projects', project.id, 'scenes'])
   }
 }

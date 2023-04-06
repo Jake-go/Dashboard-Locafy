@@ -3,20 +3,29 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col">Scene Number</th>
-                    <th scope="col">Int./Ext.</th>
-                    <th scope="col">Location</th>
-                    <th scope="col">Time of Day</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Scene Setting</th>
+                    <th scope="col">Scene Numbers</th>
                     <th scope="col">Selected Location Address</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let scene of scenes">
-                    <td>{{ scene.sceneNumber }}</td>
-                    <td>{{ scene.inOrOut }}</td>
-                    <td>{{ scene.location }}</td>
-                    <td>{{ scene.timeOfDay }}</td>
-                    <td><i class="bi bi-geo-alt-fill mx-1"></i>{{ scene.streetNum }} {{ scene.streetName }}, {{ scene.city }}</td>
+                    <td> <ng-container *ngIf="scene.streetName === ''; else greenCheck">
+                        <i class="bi bi-search text-warning"></i>
+                    </ng-container>
+                    <ng-template #greenCheck>
+                        <i class="bi bi-check-circle-fill text-success"></i>
+                    </ng-template> </td>
+                    <td>{{ scene.inOrOut }} {{ scene.location }} - {{ scene.timeOfDay }}</td>
+                    <td>{{ scene.sceneNumbers }} </td>
+                    <td><i class="bi bi-geo-alt-fill mx-1"></i>
+                        <ng-container *ngIf="scene.streetName === ''; else selectedLocation">
+                            -
+                        </ng-container>
+                        <ng-template #selectedLocation>
+                            {{ scene.streetNum }} {{ scene.streetName }}, {{ scene.city }}
+                        </ng-template></td>
                 </tr>
             </tbody>
         </table>

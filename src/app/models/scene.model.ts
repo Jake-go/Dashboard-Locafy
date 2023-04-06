@@ -3,7 +3,7 @@ export class Scene {
     inOrOut: string;
     location: string;
     timeOfDay: string;
-    sceneNumber: number;
+    sceneNumbers: string;
     streetNum: string;
     streetName: string;
     postalCode: string;
@@ -16,7 +16,7 @@ export class Scene {
       inOrOut?: string,
       location?: string,
       timeOfDay?: string,
-      sceneNumber?: number,
+      sceneNumbers?: string,
       streetNum?: string,
       streetName?: string,
       postalCode?: string,
@@ -28,7 +28,7 @@ export class Scene {
       this.inOrOut = inOrOut || '';
       this.location = location || '';
       this.timeOfDay = timeOfDay || '';
-      this.sceneNumber = sceneNumber || 0;
+      this.sceneNumbers = sceneNumbers || '';
       this.streetNum = streetNum || '';
       this.streetName = streetName || '';
       this.postalCode = postalCode || '';

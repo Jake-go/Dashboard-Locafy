@@ -4,10 +4,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { ProjectsComponent } from './dashboard/projects/projects.component';
+import { ScenesComponent } from './dashboard/scenes/scenes.component';
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent,
     children: [
-      { path: 'projects', component: ProjectsComponent }
+      { path: 'projects', component: ProjectsComponent },
+      { path: 'projects/:projectId/scenes', component: ScenesComponent }
     ], 
   },
   { path: '', redirectTo: '/home', pathMatch: 'full'},

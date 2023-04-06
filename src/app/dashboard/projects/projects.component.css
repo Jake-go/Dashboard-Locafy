@@ -2,7 +2,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
-    max-width: 80%;
 }
 
 .project-tile {
@@ -36,8 +35,4 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
-}
-
-.p {
-    width: 50%
 }
