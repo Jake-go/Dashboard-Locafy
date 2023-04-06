@@ -1,23 +1,30 @@
-<div class="container mt-5">
+<div class="mt-3">
+    <h1 class="mx-4 mb-4">Scenes</h1>
     <div class="table-responsive">
         <table class="table table-hover">
             <thead>
                 <tr>
                     <th scope="col">Status</th>
                     <th scope="col">Scene Setting</th>
-                    <th scope="col">Scene Numbers</th>
+                    <th scope="col">Scene #'s</th>
                     <th scope="col">Selected Location Address</th>
+                    <th scope="col">Loc. Contact</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let scene of scenes">
                     <td> <ng-container *ngIf="scene.streetName === ''; else greenCheck">
-                        <i class="bi bi-search text-warning"></i>
-                    </ng-container>
-                    <ng-template #greenCheck>
-                        <i class="bi bi-check-circle-fill text-success"></i>
-                    </ng-template> </td>
-                    <td>{{ scene.inOrOut }} {{ scene.location }} - {{ scene.timeOfDay }}</td>
+                            <i class="bi bi-search text-warning"></i>
+                        </ng-container>
+                        <ng-template #greenCheck>
+                            <i class="bi bi-check-circle-fill text-success"></i>
+                        </ng-template>
+                    </td>
+                    <td>
+                        <div style="font-family: 'Courier New', Courier, monospace;"><b>{{ scene.inOrOut }} {{
+                                scene.location
+                                }} - {{ scene.timeOfDay }}</b></div><i>Scene Description or notes here</i>
+                    </td>
                     <td>{{ scene.sceneNumbers }} </td>
                     <td><i class="bi bi-geo-alt-fill mx-1"></i>
                         <ng-container *ngIf="scene.streetName === ''; else selectedLocation">
@@ -25,7 +32,19 @@
                         </ng-container>
                         <ng-template #selectedLocation>
                             {{ scene.streetNum }} {{ scene.streetName }}, {{ scene.city }}
-                        </ng-template></td>
+                        </ng-template>
+                    </td>
+                    <td>
+                        <ng-container *ngIf="scene.streetName === ''; else selectedContact">
+                            -
+                        </ng-container>
+                        <ng-template #selectedContact>
+                            <b>Name:</b> John Doe<br>
+                            <b>Phone:</b> 123-456-7890<br>
+                            <b>Email:</b> johndoe@example.com
+                        </ng-template>
+                    </td>
+
                 </tr>
             </tbody>
         </table>
