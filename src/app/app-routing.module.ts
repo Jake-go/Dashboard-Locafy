@@ -5,6 +5,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { ProjectsComponent } from './dashboard/projects/projects.component';
 import { ScenesComponent } from './dashboard/scenes/scenes.component';
+import { GoogleMapsComponent } from './google-maps/google-maps.component';
+
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent,
     children: [
@@ -15,6 +17,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'home', component: LandingPageComponent },
   { path: 'login', component: LoginPageComponent },
+  { path: 'maps', component: GoogleMapsComponent },
   
 ];
 

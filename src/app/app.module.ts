@@ -18,6 +18,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { ProjectsComponent } from './dashboard/projects/projects.component';
 import { ScenesComponent } from './dashboard/scenes/scenes.component';
+import { GoogleMapsComponent } from './google-maps/google-maps.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ScenesComponent } from './dashboard/scenes/scenes.component';
     LandingPageComponent,
     LoginPageComponent,
     ProjectsComponent,
-    ScenesComponent
+    ScenesComponent,
+    GoogleMapsComponent
   ],
   imports: [
     BrowserModule,
