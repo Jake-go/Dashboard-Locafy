@@ -4,6 +4,7 @@ export class Scene {
     location: string;
     timeOfDay: string;
     sceneNumbers: string;
+    occurrences: number;
     streetNum: string;
     streetName: string;
     postalCode: string;
@@ -17,6 +18,7 @@ export class Scene {
       location?: string,
       timeOfDay?: string,
       sceneNumbers?: string,
+      occurrences?: number,
       streetNum?: string,
       streetName?: string,
       postalCode?: string,
@@ -29,6 +31,7 @@ export class Scene {
       this.location = location || '';
       this.timeOfDay = timeOfDay || '';
       this.sceneNumbers = sceneNumbers || '';
+      this.occurrences = occurrences || 0;
       this.streetNum = streetNum || '';
       this.streetName = streetName || '';
       this.postalCode = postalCode || '';

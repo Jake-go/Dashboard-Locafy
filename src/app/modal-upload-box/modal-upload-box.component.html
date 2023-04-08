@@ -1,21 +1,23 @@
-<div class="modal-content">
+<div class="modal-content" [formGroup]="uploadForm">
   <div class="modal-header">
     <h5 class="modal-title" id="uploadModalLabel">Upload Screenplay</h5>
   </div>
   <hr>
-  <div mat-dialog-content class="modal-body">
-    <div class="mb-3">
-      <label for="screnplayTitle" class="form-label">Production Title</label>
-      <input type="text" class="form-control" id="screenplayTitle" placeholder="Enter screenplay title"
-        formControlName="screenplayTitle">
+  <form (ngSubmit)="onUpload()">
+    <div mat-dialog-content class="modal-body">
+      <div class="mb-3">
+        <label for="screnplayTitle" class="form-label">Production Title</label>
+        <input type="text" class="form-control" id="screenplayTitle" placeholder="Enter screenplay title"
+          formControlName="screenplayTitle">
+      </div>
+      <div class="mb-3">
+        <label for="formFile" class="form-label">Select production screenplay</label>
+        <input class="form-control" type="file" id="file" (change)="onFileSelected($event)" #fileUpload>
+      </div>
     </div>
-    <div class="mb-3">
-      <label for="formFile" class="form-label">Select production screenplay</label>
-      <input class="form-control" type="file" id="screenplayFile" (change)="onFileSelected($event)" #fileUpload>
+    <div mat-dialog-actions class="modal-footer">
+      <button type="button" class="btn btn-outline-danger" (click)="onCancel()">Cancel</button>
+      <button type="submit" class="btn btn-primary mx-2">Upload</button>
     </div>
-  </div>
-  <div mat-dialog-actions class="modal-footer">
-    <button type="button" class="btn btn-outline-danger" (click)="onCancel()">Cancel</button>
-    <button type="submit" class="btn btn-primary mx-2" (click)="onUpload()">Upload</button>
-  </div>
+  </form>
 </div>

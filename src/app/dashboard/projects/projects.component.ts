@@ -9,14 +9,16 @@ import { DashboardServiceService } from '../dashboard-service.service';
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css']
 })
-export class ProjectsComponent implements OnInit{
+export class ProjectsComponent implements OnInit {
   selectedProject: ProjectTile | null = null;
   projects: ProjectTile[] = [];
 
-  constructor(private router: Router, private dashboardService: DashboardServiceService) {}
+  constructor(private router: Router, private dashboardService: DashboardServiceService) { }
 
   ngOnInit(): void {
-    this.projects = this.dashboardService.getProjects();
+    this.dashboardService.getProjects().subscribe((projects) => {
+      this.projects = projects;
+    });
   }
 
   onProjectSelected(project: ProjectTile) {

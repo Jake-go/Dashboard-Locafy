@@ -1,4 +1,5 @@
 import { Scene } from './scene.model';
+import { SceneList } from './sceneList.model';
 
 export class ProjectTile {
     id: number;

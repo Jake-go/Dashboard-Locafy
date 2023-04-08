@@ -1,9 +1,10 @@
-import { Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { SharedWorkspaceService } from '../workspace/shared-workspace.service';
 import { MatDialogRef } from '@angular/material/dialog';
-
-declare var bootstrap: any;
+import { SceneList } from '../models/sceneList.model';
+import { ProjectTile } from '../models/project-tile.model';
+import { Scene } from '../models/scene.model';
 
 @Component({
   selector: 'app-modal-upload-box',
@@ -11,24 +12,22 @@ declare var bootstrap: any;
   styleUrls: ['./modal-upload-box.component.css']
 })
 export class ModalUploadBoxComponent implements OnInit {
-
+  uploadForm: FormGroup;
   fileName = '';
-  screenplayUploadForm: FormGroup;
   selectedFile: File | null = null;
   private myModal: any;
-  @ViewChild('cancelButton') cancelButton!: ElementRef;
-  @ViewChild('uploadModal') uploadModal!: ElementRef;
 
-  constructor(public dialogReg: MatDialogRef<ModalUploadBoxComponent>, private renderer: Renderer2, private formBuilder: FormBuilder, private sharedWorkSpaceService: SharedWorkspaceService) {
-    console.log('ModalUploadBoxComponent constructor called');
-
-    this.screenplayUploadForm = this.formBuilder.group({
-      file: ['']
+  constructor(public dialogReg: MatDialogRef<ModalUploadBoxComponent>,
+              private formBuilder: FormBuilder,
+              private sharedWorkSpaceService: SharedWorkspaceService) 
+    {
+    this.uploadForm = this.formBuilder.group({
+      screenplayTitle: ['']
     });
   }
 
-  onFileSelected(event:any) {
-    const file:File = event.target.files[0];
+  onFileSelected(event: any) {
+    const file: File = event.target.files[0];
 
     if (file) {
       this.fileName = file.name;
@@ -36,37 +35,74 @@ export class ModalUploadBoxComponent implements OnInit {
     }
   }
 
-  uploadFile() {
-    if(this.selectedFile){
+  // uploadFile() {
+  //   if (this.selectedFile) {
+  //     const formData = new FormData();
+  //     formData.append('file', this.selectedFile, this.selectedFile.name);
+  //     const file = this.selectedFile;
+
+  //     this.sharedWorkSpaceService.uploadFile(formData).subscribe(
+  //       (response) => {
+  //         console.log('File uploaded successfully: ', response)
+  //         this.getSceneListFromScreenPlay(formData);
+  //         this.selectedFile = null;
+  //         this.fileName = '';
+  //         this.uploadForm.reset();
+  //       },
+  //       (error) => {
+  //         console.log('Error uploading file: ', error)
+  //       }
+  //     );
+  //   }
+  // }
+
+  onCancel(): void {
+    this.dialogReg.close();
+  }
+
+  onUpload(): void {
+    if (this.selectedFile) {
       const formData = new FormData();
       formData.append('file', this.selectedFile, this.selectedFile.name);
+      const file = this.selectedFile;
 
       this.sharedWorkSpaceService.uploadFile(formData).subscribe(
         (response) => {
           console.log('File uploaded successfully: ', response)
-         //reset the form and close the modal
-         this.selectedFile = null;
-         this.fileName = '';
-         
+          this.getSceneListFromScreenPlay(formData);
+          this.selectedFile = null;
+          this.fileName = '';
+          this.uploadForm.reset();
         },
         (error) => {
           console.log('Error uploading file: ', error)
         }
       );
     }
-  }
-
-  onCancel(): void{
     this.dialogReg.close();
   }
 
-  onUpload(): void{
-    this.uploadFile();
-    this.dialogReg.close();
+  getSceneListFromScreenPlay(formData: FormData) {
+    this.sharedWorkSpaceService.getScenesFromScreenplay(formData).subscribe(
+      (response: any) => {
+        const sceneListData = response.content.sceneList;
+        const sceneList = new SceneList(sceneListData);
+        const screenPlayTitle = this.uploadForm.get('screenplayTitle')?.value || 'Untitled Screenplay';
+        const newProject = new ProjectTile(0, screenPlayTitle, ["Jim Halpert", "Will Smith"], sceneList.sceneList);
+        this.sharedWorkSpaceService.addProject(newProject).subscribe(
+          (response) => {
+            console.log('Project added successfully: ', response)
+          },
+          (error) => {
+            console.log('Error adding project: ', error)
+          });
+      },
+      (error) => {
+        console.log('Error getting scenes from screenplay: ', error)
+      });
   }
-
-
 
   ngOnInit(): void {
   }
 }
+
