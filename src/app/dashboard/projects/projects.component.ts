@@ -22,6 +22,6 @@ export class ProjectsComponent implements OnInit {
   }
 
   onProjectSelected(project: ProjectTile) {
-    this.router.navigate(['dashboard', 'projects', project.id, 'scenes'])
+    this.router.navigate(['dashboard', 'projects', project.id, 'scenes', 'scene-view'])
   }
 }
