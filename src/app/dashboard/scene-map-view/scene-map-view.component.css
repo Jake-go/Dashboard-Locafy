@@ -4,24 +4,26 @@
 
 .grid-container {
     display:grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 40% 60%;
+    height:60vh;
+
 }
 
 .grid-item {
     border:1px solid black;
+    
 }
 .fullwidth {
     display:flex;
-    width: 100%;
 }
 
-.table-responsive {
-    width:45%
-}
+/* .table-responsive {
 
-.map-view {
-    width:45%
-}
+} */
+
+/* .map-view {
+    width:55%
+} */
 
 /* .flex-container {
     display:flex;
