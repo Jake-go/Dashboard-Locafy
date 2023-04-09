@@ -1,0 +1,28 @@
+.spacer {
+    flex: 1;
+}
+
+.grid-container {
+    display:grid;
+    grid-template-columns: auto auto;
+}
+
+.grid-item {
+    border:1px solid black;
+}
+.fullwidth {
+    display:flex;
+    width: 100%;
+}
+
+.table-responsive {
+    width:45%
+}
+
+.map-view {
+    width:45%
+}
+
+/* .flex-container {
+    display:flex;
+} */

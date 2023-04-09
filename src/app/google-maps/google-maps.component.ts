@@ -7,9 +7,8 @@ import { Loader } from '@googlemaps/js-api-loader';
   templateUrl: './google-maps.component.html',
   styleUrls: ['./google-maps.component.css']
 })
-export class GoogleMapsComponent implements OnInit {
 
-  
+export class GoogleMapsComponent implements OnInit {
 
   ngOnInit(): void {
     

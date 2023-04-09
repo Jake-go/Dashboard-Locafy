@@ -6,12 +6,14 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { ProjectsComponent } from './dashboard/projects/projects.component';
 import { ScenesComponent } from './dashboard/scenes/scenes.component';
 import { GoogleMapsComponent } from './google-maps/google-maps.component';
+import { SceneMapViewComponent } from './dashboard/scene-map-view/scene-map-view.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent,
     children: [
       { path: 'projects', component: ProjectsComponent },
-      { path: 'projects/:projectId/scenes', component: ScenesComponent }
+      { path: 'projects/:projectId/scenes/scene-view', component: ScenesComponent },
+      { path: 'projects/:projectId/scenes/map-view', component: SceneMapViewComponent }
     ], 
   },
   { path: '', redirectTo: '/home', pathMatch: 'full'},

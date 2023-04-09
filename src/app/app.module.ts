@@ -19,6 +19,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { ProjectsComponent } from './dashboard/projects/projects.component';
 import { ScenesComponent } from './dashboard/scenes/scenes.component';
 import { GoogleMapsComponent } from './google-maps/google-maps.component';
+import { SceneMapViewComponent } from './dashboard/scene-map-view/scene-map-view.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { GoogleMapsComponent } from './google-maps/google-maps.component';
     LoginPageComponent,
     ProjectsComponent,
     ScenesComponent,
-    GoogleMapsComponent
+    GoogleMapsComponent,
+    SceneMapViewComponent
   ],
   imports: [
     BrowserModule,
