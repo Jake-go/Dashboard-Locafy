@@ -32,4 +32,6 @@ export class ScenesComponent {
   goToProjects(): void {
     this.router.navigate(['/dashboard/projects']);
   }
+
+  
 }

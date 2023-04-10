@@ -1,0 +1,44 @@
+<div class="mt-3">
+    <div class="fullwidth"><h1 class="mx-4 mb-4 display-3">Scenes</h1><div class="spacer"></div><button class="btn btn-primary" routerLink="../scene-view">Map View</button></div>
+    <button class="btn mx-2 mb-4" (click)="goToProjects()"><i class="bi bi-chevron-left"></i>Projects</button>
+    <div class="grid-container">
+        <div class="grid-item">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Status</th>
+                        <th scope="col">Scene Setting</th>
+                        <th scope="col">Selected Location Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let scene of scenes">
+                        <td> <ng-container *ngIf="!scene.streetName">
+                                <i class="bi bi-search text-warning"></i>
+                            </ng-container>
+                            <ng-container *ngIf="scene.streetName">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                            </ng-container>
+                        </td>
+                        <td>
+                            <div style="font-family: 'Courier New', Courier, monospace;"><b>{{ scene.inOrOut }} {{
+                                    scene.location
+                                    }} {{ scene.timeOfDay }}</b></div><i>Scene Description or notes here</i>
+                        </td>
+                        <td><i class="bi bi-geo-alt-fill mx-1"></i>
+                            <ng-container *ngIf="!scene.streetName">
+                                -
+                            </ng-container>
+                            <ng-container *ngIf="scene.streetName">
+                                <a href="#" id="submit" (click)="selectLocation(scene.streetNum, scene.streetName, scene.city)">{{ scene.streetNum }} {{ scene.streetName }}, {{ scene.city }}</a>
+                            </ng-container>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="map" class="grid-item">
+            <app-google-maps ></app-google-maps>
+        </div> 
+    </div>
+</div>

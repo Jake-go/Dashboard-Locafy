@@ -1,0 +1,8 @@
+.spacer {
+    flex: 1;
+}
+
+.fullwidth {
+    display:flex;
+    width: 100%;
+}

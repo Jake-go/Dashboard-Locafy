@@ -1,0 +1,30 @@
+.spacer {
+    flex: 1;
+}
+
+.grid-container {
+    display:grid;
+    grid-template-columns: 40% 60%;
+    height:60vh;
+
+}
+
+.grid-item {
+    border:1px solid black;
+    
+}
+.fullwidth {
+    display:flex;
+}
+
+/* .table-responsive {
+
+} */
+
+/* .map-view {
+    width:55%
+} */
+
+/* .flex-container {
+    display:flex;
+} */
