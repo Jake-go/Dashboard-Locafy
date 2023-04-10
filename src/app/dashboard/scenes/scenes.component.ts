@@ -10,7 +10,9 @@ import { DashboardServiceService } from '../dashboard-service.service';
   styleUrls: ['./scenes.component.css']
 })
 export class ScenesComponent {
+  projectId: number = 0 ;
   scenes: Scene[] = [];
+  mapVisible: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,6 +26,7 @@ export class ScenesComponent {
       this.dashboardService.getProject(projectId).subscribe((project) => {
         if (project) {
           this.scenes = project.scenes;
+          this.projectId = project.id;
         }
       });
     });
@@ -33,5 +36,8 @@ export class ScenesComponent {
     this.router.navigate(['/dashboard/projects']);
   }
 
+  toggleMapView(): void {
+    this.mapVisible = !this.mapVisible;
+  }
   
 }

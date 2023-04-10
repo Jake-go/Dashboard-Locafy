@@ -6,3 +6,31 @@
     display:flex;
     width: 100%;
 }
+
+.compressed-table th,
+.compressed-table td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+.compressed-table th.status,
+.compressed-table td.status {
+  min-width: 50px;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.table-container{
+    flex: 1;
+    overflow: auto;
+}
+
+.map-container {
+    flex: 1;
+    overflow: auto;
+}
