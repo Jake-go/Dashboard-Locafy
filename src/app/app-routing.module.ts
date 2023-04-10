@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent,
     children: [
       { path: 'projects', component: ProjectsComponent },
-      { path: 'projects/:projectId/scenes', component: ScenesComponent }
+      { path: 'projects/:projectId/scenes', component: ScenesComponent } 
     ], 
   },
   { path: '', redirectTo: '/home', pathMatch: 'full'},

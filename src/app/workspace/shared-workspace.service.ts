@@ -22,8 +22,16 @@ export class SharedWorkspaceService {
     return this.http.post<SceneList>('/pdfapi/v1/extractor', formData);
   }
 
-  addProject(project: ProjectTile) {
+  addProject(project: ProjectTile, callback: () => void) {
     console.log('Adding project with payload:', JSON.stringify(project));
-    return this.http.post<ProjectTile>('/api/projects/', project);
+    return this.http.post<ProjectTile>('/api/projects/', project).subscribe(
+      (response) => {
+        console.log('Project added successfully: ', response);
+        callback();
+      },
+      (error) => {
+        console.log('Error adding project: ', error);
+      }
+    );
   }
 }

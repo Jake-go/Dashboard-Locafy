@@ -89,13 +89,10 @@ export class ModalUploadBoxComponent implements OnInit {
         const sceneList = new SceneList(sceneListData);
         const screenPlayTitle = this.uploadForm.get('screenplayTitle')?.value || 'Untitled Screenplay';
         const newProject = new ProjectTile(0, screenPlayTitle, ["Jim Halpert", "Will Smith"], sceneList.sceneList);
-        this.sharedWorkSpaceService.addProject(newProject).subscribe(
-          (response) => {
-            console.log('Project added successfully: ', response)
-          },
-          (error) => {
-            console.log('Error adding project: ', error)
-          });
+        this.sharedWorkSpaceService.addProject(newProject, () => {
+          console.log('Projects list should be refreshed now');
+          this.dialogReg.close();
+        });
       },
       (error) => {
         console.log('Error getting scenes from screenplay: ', error)
