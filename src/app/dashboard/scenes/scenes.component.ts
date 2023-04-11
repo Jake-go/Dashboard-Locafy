@@ -3,11 +3,24 @@ import { Scene } from 'src/app/models/scene.model';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { DashboardServiceService } from '../dashboard-service.service';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-scenes',
   templateUrl: './scenes.component.html',
-  styleUrls: ['./scenes.component.css']
+  styleUrls: ['./scenes.component.css'],
+  animations: [
+    trigger('toggleMap', [
+      state('hidden', style({ width: '0' })),
+      state('visible', style({ width: '50%' })),
+      transition('hidden <=> visible', animate('500ms ease-in-out'))
+    ]),
+    trigger('toggleTable', [
+      state('hidden', style({ width: '0' })),
+      state('visible', style({ width: '50%' })),
+      transition('hidden <=> visible', animate('500ms ease-in-out'))
+    ])
+  ]
 })
 export class ScenesComponent {
   projectId: number = 0 ;
