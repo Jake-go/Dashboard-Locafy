@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,Input,OnInit } from '@angular/core';
 import { Loader } from '@googlemaps/js-api-loader';
 
 
@@ -9,6 +9,8 @@ import { Loader } from '@googlemaps/js-api-loader';
 })
 
 export class GoogleMapsComponent implements OnInit {
+
+  @Input() locations: Location[] = [];
 
   ngOnInit(): void {
     

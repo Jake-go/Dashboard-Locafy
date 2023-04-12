@@ -22,9 +22,9 @@ export class SidebarComponent{
     width: '500px',
     height: '',
     position: {
-        top: '12rem',
+        top: '10%',
         bottom: '',
-        left: '48rem',
+        left: '38%',
         right: ''
     }
   };
