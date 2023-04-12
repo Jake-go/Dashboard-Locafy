@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectTile } from 'src/app/models/project-tile.model';
 import { Scene } from 'src/app/models/scene.model';
 import { Router } from '@angular/router';
-import { DashboardServiceService } from '../dashboard-service.service';
+import { DashboardService } from '../dashboard.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -15,7 +15,7 @@ export class ProjectsComponent implements OnInit {
   selectedProject: ProjectTile | null = null;
   projects: ProjectTile[] = [];
 
-  constructor(private router: Router, private dashboardService: DashboardServiceService) { }
+  constructor(private router: Router, private dashboardService: DashboardService) { }
 
   ngOnInit(): void {
     this.projectsSubscription = this.dashboardService.projects$.subscribe((projects: ProjectTile[]) => {

@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Scene } from 'src/app/models/scene.model';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
-import { DashboardServiceService } from '../dashboard-service.service';
+import { DashboardService } from '../dashboard.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
@@ -29,7 +29,7 @@ export class ScenesComponent {
 
   constructor(
     private route: ActivatedRoute,
-    private dashboardService: DashboardServiceService,
+    private dashboardService: DashboardService,
     private router: Router
   ) { }
 

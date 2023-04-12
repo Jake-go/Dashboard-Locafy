@@ -1,19 +1,19 @@
 <div class="modal-overlay">
-  <div class="modal-content" [formGroup]="uploadForm">
+  <div class="modal-content">
     <div class="modal-header">
       <h5 class="modal-title" id="uploadModalLabel">Upload Screenplay</h5>
     </div>
     <hr>
-    <form (ngSubmit)="onUpload()">
+    <form (ngSubmit)="onUpload()" [formGroup]="uploadForm">
       <div mat-dialog-content class="modal-body">
         <div class="mb-3">
-          <label for="screnplayTitle" class="form-label">Production Title</label>
-          <input type="text" class="form-control" id="screenplayTitle" placeholder="Enter screenplay title"
-            formControlName="screenplayTitle">
+          <label for="projectTitle" class="form-label">Production Title</label>
+          <input type="text" class="form-control" id="projectTitle" placeholder="Enter screenplay title"
+            formControlName="projectTitle" required>
         </div>
         <div class="mb-3">
           <label for="formFile" class="form-label">Select production screenplay</label>
-          <input class="form-control" type="file" id="screenplayFile" (change)="onFileSelected($event)" #fileUpload>
+          <input class="form-control" type="file" id="file" (change)="onFileSelected($event)" required>
         </div>
       </div>
       <div mat-dialog-actions class="modal-footer">
@@ -21,5 +21,6 @@
         <button type="submit" class="btn btn-primary mx-2">Upload</button>
       </div>
     </form>
+    <progress [value]="uploadProgress" max="100" *ngIf="uploadProgress > 0"></progress>
   </div>
 </div>
